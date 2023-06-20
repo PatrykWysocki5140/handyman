@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:handyman/screens/calendar/calendar_screen/calendar_screen.dart';
 import '../../screens/main/main_screen/main_screen_page.dart';
 
 class MainBottomBar extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomePageState extends State<MainBottomBar> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: [MainScreen(), MainScreen()],
+        children: [MainScreen(), CalendarApp()],
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
@@ -31,12 +32,12 @@ class _HomePageState extends State<MainBottomBar> {
           child: BottomNavigationBar(
             items: const [
               BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month),
-                label: "Calendar",
-              ),
-              BottomNavigationBarItem(
                 icon: Icon(Icons.list),
                 label: "List of events",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_month),
+                label: "Calendar",
               ),
             ],
             //unselectedItemColor: Color.fromARGB(255, 66, 46, 20),
